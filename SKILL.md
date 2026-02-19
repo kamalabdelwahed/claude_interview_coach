@@ -74,6 +74,7 @@ Last updated: [date]
 - Rounds completed: [list with dates]
 - Stories used: [S### per round]
 - Concerns surfaced: [from analyze or rejection feedback]
+- Interviewer intel: [LinkedIn URLs + key insights, linked to rounds]
 - Next round: [date, format if known]
 
 ## Active Patterns
@@ -95,7 +96,7 @@ Write to `coaching_state.md` whenever:
 - analyze, practice, or mock produces scores (add to Score History)
 - progress reviews trends (update Active Patterns)
 - User reports a real interview outcome (add to Outcome Log)
-- prep starts a new company loop (add to Interview Loops)
+- prep starts a new company loop or updates interviewer intel (add to Interview Loops)
 
 ---
 

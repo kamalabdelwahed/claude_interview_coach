@@ -110,10 +110,11 @@ Then provide:
 
 - Job description
 - Role/seniority
-- Optional interviewer names or profile links
+- Optional interviewer LinkedIn URLs (for per-interviewer intelligence)
 
 Expected output:
 
+- `Interviewer Intelligence` (if profile links provided — per-interviewer lens, focus areas, rapport hooks, story recommendations)
 - `What They Optimize For`
 - `Your Best Positioning`
 - `Likely Concerns + Counters`

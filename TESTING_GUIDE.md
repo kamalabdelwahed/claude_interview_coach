@@ -99,7 +99,7 @@ At Shopify, I noticed our merchant analytics dashboard had high adoption (150K m
 
 ## Test 3: prep [company]
 
-**Goal**: Test company prep with format awareness and story mapping.
+**Goal**: Test company prep with format awareness, story mapping, and interviewer intelligence.
 
 **Type**:
 ```
@@ -119,16 +119,22 @@ Job description highlights:
 - Strong track record of shipping at scale
 
 Stripe values: Move with urgency. Be meticulous. Think rigorously.
+
+Interviewer LinkedIn profiles:
+- Hiring manager: https://www.linkedin.com/in/example-maria-chen/
+- Cross-functional: https://www.linkedin.com/in/example-james-wright/
 ```
 
 **Watch for**:
 - Interview format identification and scoring weight adjustments
 - Company culture read (Stripe-specific)
-- Story mapping against predicted questions
+- Interviewer Intelligence section with per-interviewer analysis (lens, focus areas, rapport hooks, story recommendations)
+- Story mapping against predicted questions (adjusted per interviewer where applicable)
 - Gap identification (questions where no story exists)
 
 **Screenshot opportunities**:
 - Full prep brief output
+- Interviewer Intelligence section
 - Story mapping section
 - Questions to ask section
 

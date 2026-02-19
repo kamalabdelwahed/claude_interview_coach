@@ -86,19 +86,20 @@ Return exactly:
 
 ### Optional Inputs
 
-- Interviewer names or profile links
+- Interviewer LinkedIn URLs or profile links
 - Stage format
 - Company values
 
 ### Logic
 
 1. Identify interview format (see format taxonomy below).
-2. Extract competencies from JD.
-3. Identify company interviewing culture (see company archetype intelligence below).
-4. Infer top evaluation criteria (adjusted for format + culture).
-5. Map candidate strengths and risks.
-6. Generate likely questions and story mapping.
-7. Generate non-generic interviewer questions.
+2. If interviewer profile links provided, research interviewer profiles and extract intelligence (see Interviewer Intelligence section below). If only names provided, ask for LinkedIn URLs.
+3. Extract competencies from JD.
+4. Identify company interviewing culture (see company archetype intelligence below).
+5. Infer top evaluation criteria (adjusted for format + culture).
+6. Map candidate strengths and risks — incorporate interviewer-specific adjustments if intel available.
+7. Generate likely questions and story mapping.
+8. Generate non-generic interviewer questions.
 
 ### Interview Format Taxonomy
 
@@ -137,6 +138,29 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
 - Note: "You used S003 and S007 in Round 1. For Round 2, prioritize S### and S### to show range. Based on your Round 1 analysis, they'll likely probe deeper on [area]."
 
+### Interviewer Intelligence
+
+When the candidate provides interviewer LinkedIn URLs or profile links, analyze each interviewer to produce tailored prep. This is one of the highest-leverage prep activities — knowing who's across the table changes story selection, framing, and signal-reading.
+
+**Input requirement**: LinkedIn URLs or profile links required — not bare names. If the candidate provides only a name, respond: "A name alone isn't reliable enough for interviewer research — too many false matches. Can you share their LinkedIn URL? Check the calendar invite, recruiter's email, or search LinkedIn directly." If they can't find a URL, skip interviewer intel for that person and note the gap.
+
+**What to analyze** (from LinkedIn profiles, public posts, talks, articles):
+
+1. **Role/title and tenure** — What's their functional lens? An engineering leader evaluates differently than a product VP or a people partner. How long they've been at this company vs. previous roles shapes their perspective.
+2. **Career path** — Did they come up through IC or management? Startup or big co? Technical or business-side? This shapes what they value in candidates. Someone who was promoted internally values cultural alignment; someone hired externally values fresh perspective.
+3. **Recent posts/articles** — What topics do they care about publicly? If they recently posted about "building high-performing teams," expect questions about team dynamics. If they wrote about technical architecture, expect depth probes. These are signals about what they'll dig into.
+4. **Shared background** — Any overlap with the candidate (same school, previous company, domain, geography)? Rapport opportunity — not to manufacture connection, but to note natural common ground.
+5. **Interview style signals** — Seniority and function predict likely style:
+   - Senior eng leaders → tend toward depth and "how" questions
+   - Product leaders → tend toward "why" and prioritization questions
+   - HR/people partners → tend toward behavioral and values alignment
+   - Executives → tend toward brevity, "so what," and big-picture judgment
+   - Cross-functional peers → tend toward collaboration and communication style
+
+**Evidence tagging**: All interviewer claims tagged `[E:Interviewer-Profile]` when based on profile data, or `[E:Inference-LowConfidence]` when inferred from limited data (e.g., guessing interview style from title alone).
+
+**Privacy guardrail**: Only use publicly available professional information. Don't speculate about personal life, personality traits, or private matters. Stick to what the profile says and what they've published.
+
 ### Output Schema
 
 ```markdown
@@ -152,6 +176,18 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - What this company rewards in interviews:
 - What to avoid:
 - Confidence in culture read: High / Medium / Low
+
+## Interviewer Intelligence (if profile links provided)
+### [Interviewer Name] — [Title]
+- Functional lens:
+- Career path signals:
+- Recent public interests:
+- Shared background with candidate:
+- Predicted focus areas:
+- Rapport hooks:
+- Recommended stories: S### (why this story for this person)
+- Watch for (likely style and signals):
+- Confidence: High / Medium / Low
 
 ## What They Optimize For
 1.
