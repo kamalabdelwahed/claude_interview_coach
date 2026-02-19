@@ -4,7 +4,7 @@ This file contains all detailed workflow specifications, schemas, and output for
 
 ---
 
-## `/kickoff` - Setup Workflow
+## `kickoff` - Setup Workflow
 
 ### Step 1: Coaching Configuration (ask one question at a time)
 
@@ -39,8 +39,8 @@ Write the initial `coaching_state.md` file (see SKILL.md Session State System fo
 ### Time-Aware Coaching
 
 The interview timeline collected in Step 1 shapes everything:
-- **≤48 hours**: Triage mode. Skip storybank building. Run `/prep` → `/hype` → done. Every minute counts.
-- **1-2 weeks**: Focused mode. `/prep` + one targeted `/practice` drill on the weakest dimension. `/stories` only to check for critical gaps.
+- **≤48 hours**: Triage mode. Skip storybank building. Run `prep` → `hype` → done. Every minute counts.
+- **1-2 weeks**: Focused mode. `prep` + one targeted `practice` drill on the weakest dimension. `stories` only to check for critical gaps.
 - **3+ weeks**: Full system. Build storybank, run progression drills, develop differentiation. This is where the full value of the system is realized.
 
 Adjust all recommendations to timeline. Never prescribe 3-week work to a candidate interviewing tomorrow.
@@ -69,14 +69,14 @@ Return exactly:
 3.
 
 ## Next Commands
-- `/prep [company]`
-- `/stories`
-- `/help`
+- `prep [company]`
+- `stories`
+- `help`
 ```
 
 ---
 
-## `/prep [company]` - Prep Brief Workflow
+## `prep [company]` - Prep Brief Workflow
 
 ### Required Inputs
 
@@ -86,19 +86,20 @@ Return exactly:
 
 ### Optional Inputs
 
-- Interviewer names or profile links
+- Interviewer LinkedIn URLs or profile links
 - Stage format
 - Company values
 
 ### Logic
 
 1. Identify interview format (see format taxonomy below).
-2. Extract competencies from JD.
-3. Identify company interviewing culture (see company archetype intelligence below).
-4. Infer top evaluation criteria (adjusted for format + culture).
-5. Map candidate strengths and risks.
-6. Generate likely questions and story mapping.
-7. Generate non-generic interviewer questions.
+2. If interviewer profile links provided, research interviewer profiles and extract intelligence (see Interviewer Intelligence section below). If only names provided, ask for LinkedIn URLs.
+3. Extract competencies from JD.
+4. Identify company interviewing culture (see company archetype intelligence below).
+5. Infer top evaluation criteria (adjusted for format + culture).
+6. Map candidate strengths and risks — incorporate interviewer-specific adjustments if intel available.
+7. Generate likely questions and story mapping.
+8. Generate non-generic interviewer questions.
 
 ### Interview Format Taxonomy
 
@@ -137,6 +138,29 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
 - Note: "You used S003 and S007 in Round 1. For Round 2, prioritize S### and S### to show range. Based on your Round 1 analysis, they'll likely probe deeper on [area]."
 
+### Interviewer Intelligence
+
+When the candidate provides interviewer LinkedIn URLs or profile links, analyze each interviewer to produce tailored prep. This is one of the highest-leverage prep activities — knowing who's across the table changes story selection, framing, and signal-reading.
+
+**Input requirement**: LinkedIn URLs or profile links required — not bare names. If the candidate provides only a name, respond: "A name alone isn't reliable enough for interviewer research — too many false matches. Can you share their LinkedIn URL? Check the calendar invite, recruiter's email, or search LinkedIn directly." If they can't find a URL, skip interviewer intel for that person and note the gap.
+
+**What to analyze** (from LinkedIn profiles, public posts, talks, articles):
+
+1. **Role/title and tenure** — What's their functional lens? An engineering leader evaluates differently than a product VP or a people partner. How long they've been at this company vs. previous roles shapes their perspective.
+2. **Career path** — Did they come up through IC or management? Startup or big co? Technical or business-side? This shapes what they value in candidates. Someone who was promoted internally values cultural alignment; someone hired externally values fresh perspective.
+3. **Recent posts/articles** — What topics do they care about publicly? If they recently posted about "building high-performing teams," expect questions about team dynamics. If they wrote about technical architecture, expect depth probes. These are signals about what they'll dig into.
+4. **Shared background** — Any overlap with the candidate (same school, previous company, domain, geography)? Rapport opportunity — not to manufacture connection, but to note natural common ground.
+5. **Interview style signals** — Seniority and function predict likely style:
+   - Senior eng leaders → tend toward depth and "how" questions
+   - Product leaders → tend toward "why" and prioritization questions
+   - HR/people partners → tend toward behavioral and values alignment
+   - Executives → tend toward brevity, "so what," and big-picture judgment
+   - Cross-functional peers → tend toward collaboration and communication style
+
+**Evidence tagging**: All interviewer claims tagged `[E:Interviewer-Profile]` when based on profile data, or `[E:Inference-LowConfidence]` when inferred from limited data (e.g., guessing interview style from title alone).
+
+**Privacy guardrail**: Only use publicly available professional information. Don't speculate about personal life, personality traits, or private matters. Stick to what the profile says and what they've published.
+
 ### Output Schema
 
 ```markdown
@@ -152,6 +176,18 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - What this company rewards in interviews:
 - What to avoid:
 - Confidence in culture read: High / Medium / Low
+
+## Interviewer Intelligence (if profile links provided)
+### [Interviewer Name] — [Title]
+- Functional lens:
+- Career path signals:
+- Recent public interests:
+- Shared background with candidate:
+- Predicted focus areas:
+- Rapport hooks:
+- Recommended stories: S### (why this story for this person)
+- Watch for (likely style and signals):
+- Confidence: High / Medium / Low
 
 ## What They Optimize For
 1.
@@ -195,15 +231,15 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - Unknowns reducing confidence:
 
 ## Next Commands
-- `/practice`
-- `/mock [format]`
-- `/concerns`
-- `/hype`
+- `practice`
+- `mock [format]`
+- `concerns`
+- `hype`
 ```
 
 ---
 
-## `/analyze` - Transcript Analysis Workflow
+## `analyze` - Transcript Analysis Workflow
 
 Use `references/transcript-processing.md` as execution guide.
 
@@ -319,27 +355,27 @@ This is the single highest-leverage coaching tool. Describing "add quantified im
 - Data quality notes:
 
 ## Next Commands
-- `/practice`
-- `/stories`
-- `/progress`
+- `practice`
+- `stories`
+- `progress`
 ```
 
 ---
 
-## `/practice` - Practice System
+## `practice` - Practice System
 
 Show menu with progression status:
 
 ```text
 Practice Menu (progression order)
-1) /practice ladder     — Constraint drills: tell the same story at 30s, 60s, 90s, 3min
-2) /practice pushback   — Handle skepticism, interruption, "so what?" pressure
-3) /practice pivot      — Redirect when a question doesn't match your prep
-4) /practice gap        — Handle "I don't have an example for that" moments
-5) /practice role       — Role-specific specialist scrutiny
-6) /practice panel      — Multiple interviewer personas simultaneously
-7) /practice stress     — Role-specific high-pressure simulation
-8) /practice retrieval  — Rapid-fire question-to-story matching under time pressure
+1) practice ladder     — Constraint drills: tell the same story at 30s, 60s, 90s, 3min
+2) practice pushback   — Handle skepticism, interruption, "so what?" pressure
+3) practice pivot      — Redirect when a question doesn't match your prep
+4) practice gap        — Handle "I don't have an example for that" moments
+5) practice role       — Role-specific specialist scrutiny
+6) practice panel      — Multiple interviewer personas simultaneously
+7) practice stress     — Role-specific high-pressure simulation
+8) practice retrieval  — Rapid-fire question-to-story matching under time pressure
 ```
 
 Use `references/role-drills.md` for role-specific pressure prompts.
@@ -408,7 +444,7 @@ Track drill weaknesses across sessions. If a candidate struggled with pushback h
 
 ---
 
-## `/stories` - Storybank Workflow
+## `stories` - Storybank Workflow
 
 Use `references/storybank-guide.md`.
 
@@ -436,7 +472,7 @@ When adding or improving stories, force specificity on:
 - Earned secret extraction and validation (see `references/differentiation.md`)
 - One-line deploy use-case
 
-### Rapid-Retrieval Drill (`/stories drill`)
+### Rapid-Retrieval Drill (`stories drill`)
 
 The storybank's value is realized under pressure, not in a filing cabinet. This drill trains instant story selection:
 
@@ -449,7 +485,7 @@ The storybank's value is realized under pressure, not in a filing cabinet. This 
 
 ---
 
-## `/concerns` - Concern Anticipation Workflow
+## `concerns` - Concern Anticipation Workflow
 
 ### Sequence
 
@@ -476,13 +512,13 @@ The storybank's value is realized under pressure, not in a filing cabinet. This 
    Best story:
 
 ## Next Commands
-- `/practice pushback`
-- `/prep [company]`
+- `practice pushback`
+- `prep [company]`
 ```
 
 ---
 
-## `/questions` - Questions To Ask Workflow
+## `questions` - Questions To Ask Workflow
 
 Generate 5 questions with clear intent, interviewer fit, and follow-up preparation.
 
@@ -503,7 +539,7 @@ Generate 5 questions with clear intent, interviewer fit, and follow-up preparati
 
 ---
 
-## `/hype` - Pre-Interview Boost Workflow
+## `hype` - Pre-Interview Boost Workflow
 
 ### Output Schema
 
@@ -547,13 +583,13 @@ Generate 5 questions with clear intent, interviewer fit, and follow-up preparati
 - Honesty + bridge > fumbled fabrication.
 
 ## Next Commands
-- `/practice ladder`
-- `/questions`
+- `practice ladder`
+- `questions`
 ```
 
 ---
 
-## `/thankyou` - Follow-Up Workflow
+## `thankyou` - Follow-Up Workflow
 
 Return one primary draft plus optional variants.
 
@@ -578,14 +614,14 @@ Return one primary draft plus optional variants.
 
 ---
 
-## `/mock [format]` - Full Simulated Interview
+## `mock [format]` - Full Simulated Interview
 
 A complete simulated interview (4-6 questions in sequence) with holistic feedback on the full arc — not just individual answers.
 
 ### Setup
 
-1. Ask for format (behavioral screen, deep behavioral, panel, bar raiser, case study — see format taxonomy in /prep).
-2. Ask for company/role context (or use existing /prep data).
+1. Ask for format (behavioral screen, deep behavioral, panel, bar raiser, case study — see format taxonomy in prep).
+2. Ask for company/role context (or use existing prep data).
 3. Set interviewer persona based on format. For panel, deploy 2-3 distinct interviewer archetypes from `references/role-drills.md`.
 
 ### Execution
@@ -650,14 +686,14 @@ Switch between personas naturally within the session. Create moments where perso
 3.
 
 ## Next Commands
-- `/mock [same format]` (retry)
-- `/practice [specific drill]` (target a weakness)
-- `/analyze` (if they have a real transcript to compare)
+- `mock [same format]` (retry)
+- `practice [specific drill]` (target a weakness)
+- `analyze` (if they have a real transcript to compare)
 ```
 
 ---
 
-## `/negotiate` - Post-Offer Negotiation Coaching
+## `negotiate` - Post-Offer Negotiation Coaching
 
 ### Sequence (one question at a time)
 
@@ -714,13 +750,13 @@ Switch between personas naturally within the session. Create moments where perso
 - How to buy time if needed: "[exact language]"
 
 ## Next Commands
-- `/hype` (if more interviews coming)
-- `/progress` (to close out the coaching arc)
+- `hype` (if more interviews coming)
+- `progress` (to close out the coaching arc)
 ```
 
 ---
 
-## `/progress` - Trend Review Workflow
+## `progress` - Trend Review Workflow
 
 ### Sequence
 
@@ -815,10 +851,10 @@ Log outcomes in `coaching_state.md` (Score History and Outcome Log sections).
 - Anything to change about our approach?
 
 ## Next Commands
-- `/practice`
-- `/stories`
-- `/prep [company]`
-- `/mock [format]`
+- `practice`
+- `stories`
+- `prep [company]`
+- `mock [format]`
 ```
 
 ---
@@ -832,11 +868,11 @@ These modules are active across all workflows. They are referenced from SKILL.md
 Differentiation is not optional — it is the 5th scoring dimension applied to every answer. The reference material in `references/differentiation.md` provides the full protocol.
 
 **Trigger conditions** (any one fires the full differentiation protocol):
-- Differentiation score < 3 on any answer during /analyze
+- Differentiation score < 3 on any answer during analyze
 - Candidate's answers could be swapped with another qualified candidate's and no one would notice
 - Answer relies on frameworks, buzzwords, or textbook structures without personal insight
 - Story lacks an earned secret — an insight only this candidate could have from direct experience
-- During /stories: every story should have an earned secret extracted before it's considered "complete"
+- During stories: every story should have an earned secret extracted before it's considered "complete"
 
 **When triggered:**
 1. Extract earned secrets using the 5 reflection questions in `references/differentiation.md`.
@@ -844,7 +880,7 @@ Differentiation is not optional — it is the 5th scoring dimension applied to e
 3. Integrate earned secrets into storybank entries (not as a separate layer — woven into the stories themselves).
 4. Test under pressure using interruption and constraint ladder drills.
 
-Differentiation coaching is integrated into `/analyze`, `/stories`, and `/practice` — not a standalone step.
+Differentiation coaching is integrated into `analyze`, `stories`, and `practice` — not a standalone step.
 
 ### Gap-Handling Framework
 
@@ -873,9 +909,9 @@ Every prep system assumes you'll have a story for every question. You won't. Thi
 - Don't use "we did X" to cover for personal gaps — interviewers catch this
 
 **Integration:**
-- During `/stories find gaps`, flag questions where no story exists and prescribe which gap response pattern to prepare.
-- During `/practice gap`, drill rapid gap-handling under pressure.
-- During `/mock`, include at least one question designed to hit a known gap.
+- During `stories find gaps`, flag questions where no story exists and prescribe which gap response pattern to prepare.
+- During `practice gap`, drill rapid gap-handling under pressure.
+- During `mock`, include at least one question designed to hit a known gap.
 
 ### Signal-Reading Module
 
@@ -900,9 +936,9 @@ Real interviews are two-way. Interviewers give signals that candidates should le
 - Interviewer reading from a script → structured interview, stay concise
 
 **Integration:**
-- During `/practice pushback`, coach signal reading as part of the drill.
-- During `/mock`, include explicit signal-reading notes in the debrief.
-- During `/analyze`, look for moments in transcripts where the candidate missed signals (follow-ups that indicate the previous answer missed the mark, redirections, etc.).
+- During `practice pushback`, coach signal reading as part of the drill.
+- During `mock`, include explicit signal-reading notes in the debrief.
+- During `analyze`, look for moments in transcripts where the candidate missed signals (follow-ups that indicate the previous answer missed the mark, redirections, etc.).
 
 ### Psychological Readiness Module
 
@@ -920,14 +956,14 @@ Interview failure is frequently emotional, not intellectual. This module address
 
 **Post-Interview Processing:**
 - **Don't catastrophize**: Teach the candidate that their assessment immediately after is usually wrong — both too harsh and too confident on different questions.
-- **Structured debrief**: Instead of spiraling, channel energy into `/analyze`. Turn anxiety into data.
+- **Structured debrief**: Instead of spiraling, channel energy into `analyze`. Turn anxiety into data.
 - **Rejection reframe**: "Rejection means this specific role at this specific company at this specific time wasn't a fit. It is not a verdict on your worth or capability."
 
 **Integration:**
-- `/hype` includes a psychological warmup and mid-interview recovery scripts.
-- `/progress` monitors for emotional patterns (declining engagement, increased self-criticism, avoidance of practice) and addresses them directly.
-- `/practice` debriefs include a "how did that feel?" check alongside the score — because if the candidate felt terrible about a 4-scoring answer, there's useful information in that gap.
-- The /analyze decision tree includes a psychological detection branch — when practice scores outpace real performance, route here first.
+- `hype` includes a psychological warmup and mid-interview recovery scripts.
+- `progress` monitors for emotional patterns (declining engagement, increased self-criticism, avoidance of practice) and addresses them directly.
+- `practice` debriefs include a "how did that feel?" check alongside the score — because if the candidate felt terrible about a 4-scoring answer, there's useful information in that gap.
+- The analyze decision tree includes a psychological detection branch — when practice scores outpace real performance, route here first.
 
 ### Cultural and Linguistic Awareness
 
