@@ -107,7 +107,7 @@ Record their responses and compare to your independent assessment in the debrief
 ## Mock Interview Debrief: [Format] - [Company/Role]
 
 ## Overall Impression
-- Hiring signal: Strong Hire / Hire / Mixed / No Hire
+- Hire Signal: Strong Hire / Hire / Mixed / No Hire
 - One-sentence summary of how this interview would land:
 
 ## Arc Analysis

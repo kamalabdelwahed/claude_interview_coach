@@ -41,7 +41,6 @@ If no prep exists, say so and suggest running `prep` first if time allows.
 3.
 
 ### 3 Questions To Ask
-[If `questions` was previously run for this company (check Interview Loops for saved prepared questions), pull from those. Don't regenerate — consistency matters.]
 1.
 2.
 3.
@@ -57,10 +56,10 @@ If no prep exists, say so and suggest running `prep` first if time allows.
 5. Reframe: "This is a conversation to see if there's mutual fit. I'm also interviewing them."
 
 ## If You Bomb an Answer Mid-Interview
-See Psychological Readiness Module in `references/cross-cutting.md` — Mid-Interview Recovery.
+See Psychological Readiness Module — Mid-Interview Recovery.
 
 ## If You Get a Question You Have No Story For
-See Gap-Handling Module in `references/cross-cutting.md` — Pattern 1: Adjacent Bridge.
+See Gap-Handling Module — Pattern 1: Adjacent Bridge.
 
 ## If You Have Back-to-Back Interviews
 - Between interviews: 5-minute reset. Don't review notes — your brain needs a break, not more input.
@@ -72,3 +71,11 @@ See Gap-Handling Module in `references/cross-cutting.md` — Pattern 1: Adjacent
 
 **Next commands**: `practice ladder`, `questions`, `mock [format]`, `debrief`
 ```
+
+#### Questions Sourcing
+
+If `questions` was previously run for this company (check Interview Loops for saved prepared questions), pull from those for the 3x3. Don't regenerate — consistency matters.
+
+#### Recovery Section Sourcing
+
+For "If You Bomb an Answer Mid-Interview," inline key guidance from the Psychological Readiness Module (Mid-Interview Recovery) in `references/cross-cutting.md`. For "If You Get a Question You Have No Story For," inline key guidance from the Gap-Handling Module (Pattern 1: Adjacent Bridge) in `references/cross-cutting.md`.

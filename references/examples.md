@@ -242,7 +242,7 @@ Your rejection pattern suggests a specific bottleneck — let's find it fast.
 ## Mock Interview Debrief: Behavioral Screen — GrowthCo PM
 
 ## Overall Impression
-- Hiring signal: Mixed
+- Hire Signal: Mixed
 - One-sentence summary: Strong individual answers but the full interview felt like five separate stories rather than a cohesive narrative about who you are as a PM.
 
 ## Arc Analysis
