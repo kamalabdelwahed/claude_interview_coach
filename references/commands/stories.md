@@ -60,7 +60,7 @@ When improving a story, preserve the previous version in the Story Details secti
 
 ### Story Records
 
-See `references/storybank-guide.md` for the full storybank format, column definitions, and skill tags. Every story record must include an Earned Secret field — see `references/differentiation.md` for the extraction protocol and validation gates.
+See `references/storybank-guide.md` for the full storybank format, column definitions, and skill tags. Every story record must include an Earned Secret field — see `references/differentiation.md` for the extraction protocol.
 
 ### Prioritized Gap Analysis
 
@@ -83,4 +83,46 @@ When adding or improving stories, force specificity on:
 
 ### Rapid-Retrieval Drill (`stories drill`)
 
-See `references/storybank-guide.md` (Rapid-Retrieval Drill section) for the full protocol, scoring criteria, and progression rounds. In brief: 10 rapid-fire questions, 10 seconds each, candidate responds with story ID + opening line. Debrief focuses on retrieval gaps and hesitation patterns.
+See `references/storybank-guide.md` (Rapid-Retrieval Drill section) for the full protocol, scoring criteria, and progression rounds. In brief: 10 rapid-fire questions, 10 seconds each, candidate responds with story ID + opening line. Debrief focuses on retrieval gaps and hesitation patterns. Also available via `practice retrieval`.
+
+### Output Schema (per action)
+
+**After `stories add`:**
+```markdown
+## Story Added: [Title]
+- ID: S###
+- Primary Skill:
+- Earned Secret:
+- Strength: [1-5]
+- Deploy for: [one-line use case]
+
+[Full STAR text written to Story Details in coaching_state.md]
+
+**Next commands**: `stories improve S###`, `stories find gaps`, `practice retrieval`, `concerns`
+```
+
+**After `stories improve`:**
+```markdown
+## Story Improved: [Title] (S###)
+- Previous strength: __ → New strength: __
+- What changed: [brief description]
+- Version history updated
+
+**Next commands**: `stories view`, `practice`, `analyze`
+```
+
+**After `stories find gaps`:**
+```markdown
+## Storybank Gap Analysis
+### Critical Gaps (must fill for target roles)
+1. [competency] — No story exists. Recommended: [surface new story / reframe existing S###]
+   Gap-handling pattern if asked before a story exists: [Pattern 1-4 from Gap-Handling Framework]
+
+### Important Gaps (likely to come up)
+1. [competency] — Only weak story (S###, strength __). Recommended: [improve / replace]
+
+### Nice-to-Have (might come up)
+1. [competency]
+
+**Next commands**: `stories add`, `practice gap`, `prep [company]`
+```

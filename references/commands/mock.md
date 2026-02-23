@@ -92,6 +92,15 @@ Match the mock to whatever the candidate describes. If they don't know, default 
 - **Energy trajectory**: Mixed formats are 50-70 minute marathons. How is their energy at question 5 vs. question 1? Does quality drop in the second half?
 - **Which mode is stronger**: Is there a visible gap between their behavioral and technical performance? This is critical coaching data — it reveals where to focus.
 
+### Post-Mock Self-Assessment
+
+**Before showing any scores or feedback**, ask the candidate for their overall self-assessment:
+- "Before I share my debrief — how do you think that went overall? Strong Hire, Hire, Mixed, or No Hire?"
+- "Which answer do you feel best about? Which one was weakest?"
+- "Anything you'd do differently if you could run it again?"
+
+Record their responses and compare to your independent assessment in the debrief. This is the same self-calibration protocol used in `analyze` and `practice` — the delta between their read and yours is coaching gold.
+
 ### Post-Mock Debrief Schema
 
 ```markdown
@@ -157,3 +166,10 @@ Replay 3-4 key moments from the interviewer's point of view. This teaches candid
 
 **Next commands**: `mock [same format]`, `practice [specific drill]`, `practice technical`, `analyze`
 ```
+
+### Coaching State Integration
+
+After the mock debrief:
+1. **Add scores to Score History** — Type: mock. Include the Hire Signal.
+2. **Record self-assessment delta** — Self-Δ: over/under/accurate based on the pre-debrief self-assessment.
+3. **Update Active Coaching Strategy** if the mock reveals new patterns or confirms/contradicts the current strategy. Preserve Previous approaches when updating — move the old approach there before writing the new one.

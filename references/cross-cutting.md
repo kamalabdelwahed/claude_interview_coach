@@ -2,7 +2,9 @@
 
 These modules are active across all workflows. They are referenced from SKILL.md and integrated into specific commands as noted.
 
-### Differentiation Layer (Always Active)
+---
+
+## Differentiation Layer (Always Active)
 
 Differentiation is not optional — it is the 5th scoring dimension applied to every answer. The reference material in `references/differentiation.md` provides the full protocol.
 
@@ -21,7 +23,9 @@ Differentiation is not optional — it is the 5th scoring dimension applied to e
 
 Differentiation coaching is integrated into `analyze`, `stories`, and `practice` — not a standalone step.
 
-### Gap-Handling Framework
+---
+
+## Gap-Handling Framework
 
 Every prep system assumes you'll have a story for every question. You won't. This framework coaches the critical skill of handling questions where you genuinely don't have a strong example.
 
@@ -67,7 +71,9 @@ During `stories find gaps`, prescribe the specific pattern for each gap based on
 - During `practice gap`, drill rapid gap-handling under pressure.
 - During `mock`, include at least one question designed to hit a known gap.
 
-### Signal-Reading Module
+---
+
+## Signal-Reading Module
 
 Real interviews are two-way. Interviewers give signals that candidates should learn to read and adapt to in real-time.
 
@@ -94,7 +100,9 @@ Real interviews are two-way. Interviewers give signals that candidates should le
 - During `mock`, include explicit signal-reading notes in the debrief.
 - During `analyze`, look for moments in transcripts where the candidate missed signals (follow-ups that indicate the previous answer missed the mark, redirections, etc.).
 
-### Psychological Readiness Module
+---
+
+## Psychological Readiness Module
 
 Interview failure is frequently emotional, not intellectual. This module addresses the practical psychology of interview performance — not therapy, but actionable techniques for managing the mental game.
 
@@ -119,7 +127,9 @@ Interview failure is frequently emotional, not intellectual. This module address
 - `practice` debriefs include a "how did that feel?" check alongside the score — because if the candidate felt terrible about a 4-scoring answer, there's useful information in that gap.
 - The analyze decision tree includes a psychological detection branch — when practice scores outpace real performance, route here first.
 
-### Cultural and Linguistic Awareness
+---
+
+## Cultural and Linguistic Awareness
 
 Non-native English speakers and candidates from different cultural backgrounds face specific interview challenges that are NOT skill deficits. Misdiagnosing cultural communication patterns as coaching gaps wastes time and undermines confidence.
 
@@ -132,6 +142,8 @@ Non-native English speakers and candidates from different cultural backgrounds f
 **When Detected:**
 If scoring reveals patterns consistent with cultural communication differences (low Credibility despite strong content, low Structure despite clear thinking, consistent modesty in self-description), name it: "I think this might be a communication style difference rather than a skill gap. Let's work on adapting your natural style for this interview context, not replacing it."
 
+---
+
 ## Cross-Command Dependency Guide
 
 Commands produce better output when they have data from other commands. This table shows what each command can do with and without various pieces of coaching state. Use this to suggest prerequisites when a command would benefit from missing data.
@@ -143,12 +155,12 @@ Commands produce better output when they have data from other commands. This tab
 | `prep` | Storybank, coaching state profile, interviewer links | Storybank (can't do story mapping, flags the gap), profile (infers from JD) | Company + JD |
 | `analyze` | Coaching state (seniority band, storybank for story matching) | Seniority band (asks for it), storybank (skips story mapping) | Transcript |
 | `debrief` | Storybank (for Last Used updates), Interview Loops (for context) | Both (captures data without cross-referencing) | — |
-| `practice` | Score history (to set drill stage), storybank (for tailored questions), prep data (for company-specific drills) | All (uses generic questions, starts at Stage 1) | — |
-| `mock` | Prep data, storybank, score history, interviewer intel | All (uses generic questions and personas) | Format |
+| `practice` | Score history (to set drill stage), storybank (for tailored questions), prep data (for company-specific drills), Drill Progression (for current stage) | All (uses generic questions, starts at Stage 1) | — |
+| `mock` | Prep data, storybank, score history, interviewer intel, concerns data (for targeted questions) | All (uses generic questions and personas) | Format |
 | `stories` | Resume analysis from kickoff (for story seeds) | Resume (uses reflective prompts instead) | — |
 | `concerns` | Resume analysis, storybank, previous `analyze` results, JD | All (generates from candidate input only) | — |
 | `questions` | Prep data, interviewer intel, interview stage | All (generates generic questions) | — |
-| `hype` | Score history, storybank, prep brief, concerns | All (falls back to resume-based hype — explicitly flagged) | — |
+| `hype` | Score history, storybank, prep brief, concerns, Resume Analysis | All (falls back to resume-based hype — explicitly flagged) | — |
 | `thankyou` | Debrief data, Interview Loops, interviewer intel | All (asks candidate for callbacks) | — |
 | `progress` | 3+ scored sessions, outcome data | Works with 1-2 sessions (reduced — see minimum data thresholds) | At least 1 scored session |
 | `negotiate` | Interview Loops, outcome log | Both (collects offer details fresh) | Offer details |

@@ -17,7 +17,7 @@ Create a table with these columns:
 | **Impact** | Quantified outcome or explanation if not quantifiable |
 | **Domain** | Technical / Product / Business / People |
 | **Risk/Stakes** | What could have gone wrong? Why did it matter? |
-| **Earned Secret** | The counterintuitive insight only you learned from this experience (see `references/differentiation.md` for extraction protocol and validation gates) |
+| **Earned Secret** | The counterintuitive insight only you learned from this experience (see `references/differentiation.md` for extraction protocol) |
 | **Strength** | How compelling/differentiated (1-5) |
 | **Last Used** | Date of most recent use in interview |
 | **Notes** | Performance notes, feedback received |

@@ -98,5 +98,5 @@ When the candidate has more than one offer:
 - When to respond:
 - How to buy time if needed: "[exact language]"
 
-**Next commands**: `hype`, `progress`
+**Next commands**: `reflect`, `thankyou`, `progress`
 ```
