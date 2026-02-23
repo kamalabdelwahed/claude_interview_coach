@@ -120,7 +120,7 @@ After scanning, include detected anti-patterns in the analysis output. Each dete
 
 ## Step 3: Multi-Lens Scoring
 
-Run the parsed transcript through evaluative lenses. **Important**: Which lenses you run depends on the post-scoring decision tree in `references/commands/analyze.md`. If a primary bottleneck is identified after initial scoring, scope the analysis accordingly rather than running all four lenses mechanically. Always follow the evidence sourcing standard from SKILL.md. **For Quick Prep track**: Run only Lens 1 and skip to delta sheet.
+Run the parsed transcript through evaluative lenses. **Important**: Which lenses you run depends on the Post-Scoring Decision Tree in `references/commands/analyze.md`. If a primary bottleneck is identified after initial scoring, scope the analysis accordingly rather than running all four lenses mechanically. Always follow the evidence sourcing standard from SKILL.md. **For Quick Prep track**: Run only Lens 1 and skip to delta sheet.
 
 ### Lens 1: Hiring Manager Perspective
 
@@ -162,7 +162,7 @@ FINAL OUTPUT:
 - 3 weakest answers (specific gaps + root cause patterns)
 - Biggest concern about this candidate
 - One-sentence justification for your decision
-- Primary bottleneck dimension → triage recommendation (see SKILL.md decision tree)
+- Primary bottleneck dimension → triage recommendation (see Post-Scoring Decision Tree in `references/commands/analyze.md`)
 ```
 
 ### Lens 2: Skeptical Specialist
@@ -262,7 +262,7 @@ Calibration band: [early career / mid-career / senior / executive]
 Hiring Manager Assessment: Strong Hire / Hire / Mixed / No Hire
 
 PRIMARY BOTTLENECK: [dimension]
-TRIAGE PATH: [coaching path chosen per SKILL.md decision tree]
+TRIAGE PATH: [coaching path chosen per Post-Scoring Decision Tree in references/commands/analyze.md]
 
 ANTI-PATTERNS DETECTED: [list with Q# references]
 
@@ -302,44 +302,19 @@ NEXT ACTIONS (co-created with candidate):
 
 ---
 
-## Step 5: Update Tracking (Full System)
+## Step 5: Update Coaching State
 
-After each interview, update the persistent failure mode tracker.
+After analysis, update `coaching_state.md` per the State Update Triggers in SKILL.md:
 
-```
-FAILURE MODE TRACKER UPDATE
+1. **Score History**: Add a row with the interview scores, Type: interview, and Hire Signal from the overall assessment.
+2. **Active Coaching Strategy**: Write or update the strategy based on the triage decision (see Step 15 in `references/commands/analyze.md`). Preserve Previous approaches when changing strategy.
+3. **Session Log**: Add an entry for this analysis session.
+4. **Storybank**: Apply any rework/retire/add recommendations from the delta sheet.
 
-Add this interview's data:
-
-PATTERN METRICS:
-- % questions actually answered: ___
-- Average scores: Sub ___ | Str ___ | Rel ___ | Cred ___ | Diff ___
-- Talk:listen ratio estimate: ___
-- Filler word rate: ___ per minute
-- Answer length consistency (std dev): ___
-
-COMPETENCY BREAKDOWN:
-Top 3 weak competencies:
-1. [competency] - avg score ___ across Q#[list]
-2. [competency] - avg score ___
-3. [competency] - avg score ___
-
-TOP 3 OVERUSED CRUTCHES:
-1. [pattern] - appeared in Q#[list]
-2. [pattern] - appeared in Q#[list]
-3. [pattern] - appeared in Q#[list]
-
-TREND COMPARISON:
-vs. Previous interview:
-- Improving: [list]
-- Stagnant: [list]
-- Declining: [list]
-
-CELEBRATION:
-What improved since last time: ___
-
-SELF-REFLECTION:
-What patterns are you noticing? ___
-What feels different now vs. earlier? ___
-```
+The following pattern metrics are captured inline in the analysis output (Anti-Pattern Scan, Per-Answer Scorecards, and Delta Sheet) rather than in a separate tracker. Key metrics to reference in future sessions:
+- Average scores per dimension
+- Anti-patterns detected (with Q# references)
+- Top 3 weak competencies
+- Top 3 overused crutches
+- Trend vs. previous analysis (improving/stagnant/declining per dimension)
 

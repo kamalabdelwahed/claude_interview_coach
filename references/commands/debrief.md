@@ -74,10 +74,6 @@ Based on the emotional check in step 1, adapt:
 - What to do differently:
 - What worked:
 
-## Coaching State Updates
-- Storybank updates: [Last Used dates, performance notes]
-- Interview Loop updates: [round completed, stories used, signals noted]
-
 ## Transcript Status
 - [ ] Transcript available → run `analyze` when ready
 - [ ] No transcript → directional analysis above is what we have
@@ -87,4 +83,7 @@ Based on the emotional check in step 1, adapt:
 
 ### Coaching State Integration
 
-Update `coaching_state.md` per the State Update Triggers in SKILL.md.
+Update `coaching_state.md` per the State Update Triggers in SKILL.md:
+- Storybank updates: Last Used dates, performance notes
+- Interview Loop updates: round completed, stories used, signals noted
+- Outcome Log: add entry with Result: pending

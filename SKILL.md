@@ -26,13 +26,13 @@ This skill maintains continuity across sessions using a persistent `coaching_sta
 
 At the beginning of every session:
 1. Read `coaching_state.md` if it exists.
-2. **If it exists**: Run the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the archival protocol silently before continuing.
+2. **If it exists**: Run the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the Score History Archival check silently before continuing.
 3. **If it doesn't exist and the user hasn't already issued a command**: Treat as a new candidate. Suggest kickoff.
 4. **If it doesn't exist but the user has already issued a command** (e.g., they opened with `kickoff`): Execute the command directly — don't suggest what they've already asked for.
 
 ### Session End Protocol
 
-At the end of every session (or when the user says they're done, or after any major workflow completes):
+At the end of every session (or when the user says they're done):
 1. Write the updated coaching state to `coaching_state.md`.
 2. Confirm: "Session state saved. I'll pick up where we left off next time."
 
@@ -62,6 +62,8 @@ Last updated: [date]
 - Track: Quick Prep / Full System
 - Feedback directness: [1-5]
 - Interview timeline: [date or "ongoing"]
+- Time-aware coaching mode: [triage / focused / full]
+- Interview history: [first-time / active but not advancing / experienced but rusty]
 - Biggest concern:
 - Known interview formats: [e.g., "behavioral screen, system design (verbal walkthrough)" — updated by Format Discovery Protocol during prep/mock]
 
@@ -74,7 +76,7 @@ Last updated: [date]
 ## Storybank
 | ID | Title | Primary Skill | Earned Secret | Strength | Last Used |
 |----|-------|---------------|---------------|----------|-----------|
-[rows]
+[rows — compact index. Full column spec (Secondary Skill, Impact, Domain, Risk/Stakes, Notes) in references/storybank-guide.md. Add extra columns as stories are enriched.]
 
 ### Story Details
 #### S001 — [Title]
@@ -93,9 +95,9 @@ Last updated: [date]
 [Narrated trend summary of older sessions — direction per dimension, inflection points, what caused shifts]
 
 ### Recent Scores
-| Date | Type | Context | Sub | Str | Rel | Cred | Diff | Signal | Self-Δ |
-|------|------|---------|-----|-----|-----|------|------|--------|--------|
-[rows — Type: interview/practice/mock, Self-Δ: over/under/accurate. Keep most recent 10-15 rows.]
+| Date | Type | Context | Sub | Str | Rel | Cred | Diff | Hire Signal | Self-Δ |
+|------|------|---------|-----|-----|-----|------|------|-------------|--------|
+[rows — Type: interview/practice/mock. Sub-Diff are 1-5 numeric. Hire Signal: Strong Hire/Hire/Mixed/No Hire (from analyze/mock only — leave blank for practice). Self-Δ: over/under/accurate. Keep most recent 10-15 rows.]
 
 ## Outcome Log
 | Date | Company | Role | Round | Result | Notes |
@@ -109,15 +111,19 @@ Last updated: [date]
 
 ## Interview Loops (active)
 ### [Company Name]
+- Status: [Researched / Applied / Interviewing / Offer / Closed]
 - Rounds completed: [list with dates]
 - Round formats:
   - Round 1: [format, duration, interviewer type — e.g., "Behavioral screen, 45min, recruiter"]
   - Round 2: [format, duration, interviewer type]
 - Stories used: [S### per round]
-- Concerns surfaced: [from analyze or rejection feedback]
+- Concerns surfaced: [ranked list from `concerns` — severity + counter strategy, or from analyze/rejection feedback]
 - Interviewer intel: [LinkedIn URLs + key insights, linked to rounds]
 - Prepared questions: [top 3 from `questions` if run]
 - Next round: [date, format if known]
+- Fit assessment: [from `research` if run — strong / moderate / weak]
+- Key signals: [from `research` — 1-2 lines]
+- Date researched: [date, if `research` was run]
 
 ## Active Coaching Strategy
 - Primary bottleneck: [dimension]
@@ -150,10 +156,12 @@ Last updated: [date]
 ### State Update Triggers
 
 Write to `coaching_state.md` whenever:
-- kickoff creates a new profile and populates Resume Analysis from resume analysis
-- research adds a new company entry (lightweight, in Interview Loops with status: Researched)
+- kickoff creates a new profile and populates Resume Analysis from resume analysis. Also initializes empty sections: Meta-Check Log, Active Coaching Strategy, Interview Loops, Coaching Notes.
+- research adds a new company entry (lightweight, in Interview Loops with Status: Researched, plus fit assessment, key signals, and date)
 - stories adds, improves, or retires stories (write full STAR text to Story Details, not just index row)
-- analyze, practice, or mock produces scores (add to Score History) — analyze also updates Active Coaching Strategy after triage decision
+- analyze, practice, or mock produces scores (add to Score History) — analyze also updates Active Coaching Strategy after triage decision. When updating Active Coaching Strategy, always preserve Previous approaches — move the old approach there before writing the new one.
+- concerns generates ranked concerns (save to Interview Loops under the relevant company's Concerns surfaced, or to Active Coaching Strategy if general)
+- questions generates tailored questions (save top 3 to Interview Loops under Prepared questions for the relevant company)
 - debrief captures post-interview data (add to Interview Loops, update storybank Last Used dates, add to Outcome Log as pending)
 - progress reviews trends (update Active Coaching Strategy, check Score History archival)
 - User reports a real interview outcome (add to Outcome Log)

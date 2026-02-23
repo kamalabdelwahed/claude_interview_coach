@@ -48,7 +48,11 @@
    Source:
    Counter (one-liner):
 
-## Immediate Practice Option
+**Next commands**: `practice`, `prep [company]`, `mock [format]`
+```
+
+### Immediate Practice Option
+
 After generating concerns, offer to drill the top concern right now:
 "Your biggest concern is [X]. Want to practice handling it? I'll throw the direct question, then the subtle probe version, and we'll see how you do."
 
@@ -58,13 +62,10 @@ If they accept, run a mini pushback drill (2-3 rounds) focused on the top 1-2 co
 - Round 3: Follow-up challenge after their counter
 Score each round and record to coaching state.
 
-## Concern Tracking
+### Concern Tracking
 
-After generating, save the ranked concerns to `coaching_state.md` (in the Interview Loops section for the relevant company, or in Active Coaching Strategy if general). This allows:
+After generating, save the ranked concerns to `coaching_state.md` (in the Interview Loops section under the relevant company's Concerns surfaced field, or in Active Coaching Strategy if general). This allows:
 - `prep` to pull from previously generated concerns instead of re-deriving them
 - `hype` to reference the top concern + counter in the 3x3
 - `progress` to track whether concerns are being addressed over time
 - `mock` to include questions targeting known concerns
-
-**Next commands**: `practice pushback`, `prep [company]`
-```

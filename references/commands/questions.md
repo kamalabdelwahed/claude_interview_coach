@@ -46,6 +46,8 @@ Flag these common mistakes:
 
 ## Questions To Avoid This Round
 - [1-2 specific questions the candidate might be tempted to ask, with brief explanation of why to skip them]
+
+**Next commands**: `hype`, `prep [company]`, `mock [format]`
 ```
 
 ### Coaching State Integration

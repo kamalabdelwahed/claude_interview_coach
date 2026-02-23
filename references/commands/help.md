@@ -39,6 +39,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 | `progress` | Trend review, self-calibration, outcomes |
 | `negotiate` | Post-offer negotiation coaching |
 | `reflect` | Post-search retrospective + archive |
+| `help` | Show this command list |
 
 ## Where You Are Now
 [Brief coaching state summary — or "No coaching state found. Run `kickoff` to get started."]

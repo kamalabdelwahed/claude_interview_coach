@@ -39,11 +39,11 @@ The simplest path. Open this repo directly from Claude Code on Desktop:
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/noamsegal/interview-coach-skill.git
+git clone https://github.com/noamseg/interview-coach-skill.git
 cd interview-coach-skill
 ```
 
-Or [download it as a ZIP](https://github.com/noamsegal/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
+Or [download it as a ZIP](https://github.com/noamseg/interview-coach-skill/archive/refs/heads/main.zip) and unzip.
 
 2. Rename the skill file so Claude Code auto-loads it:
 
@@ -268,6 +268,8 @@ Choose during `kickoff`. You can switch later.
 interview-coach-skill/
 ├── SKILL.md                            # Core skill — rename to CLAUDE.md to activate
 ├── README.md                           # This file
+├── TESTING_GUIDE.md                    # Guide for testing the skill
+├── LICENSE                             # MIT License
 ├── coaching_state.md                   # Created on first kickoff (persistent memory, auto-saved)
 └── references/
     ├── commands/                       # Per-command workflows (loaded on demand)
@@ -287,7 +289,7 @@ interview-coach-skill/
     │   ├── negotiate.md
     │   ├── reflect.md
     │   └── help.md
-    ├── cross-cutting.md                # Shared modules: gap-handling, signal-reading, differentiation, cultural awareness
+    ├── cross-cutting.md                # Shared modules: gap-handling, signal-reading, differentiation, cultural awareness, psychological readiness, cross-command dependencies
     ├── rubrics-detailed.md             # Scoring anchors, root causes, seniority calibration
     ├── role-drills.md                  # Role-specific drills + interviewer archetypes
     ├── differentiation.md              # Earned secrets, spiky POVs, clarity under pressure
